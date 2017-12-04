@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>4-4</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<script src="https://unpkg.com/vue/dist/vue.min.js"></script>
+		<style media="screen">
+			html, body{ margin : 0; padding : 0 }
+			#example{
+				height : 98vh; min-height:100%; padding:5px
+			}
+		</style>
+	</head>
+	<body>
+		<!-- 인라인함수로 무조건 막기-->
+		<div id="example" v-on:contextmenu.prevent="ctxStop">
+		<!-- 이벤트에 따라 기본 이벤트 함수 막거나 막지않가-->
+		<!-- <div id="example" v-on:contextmenu="ctxStop"> -->
+			<a href="https://facebook.com" @click="confirmFB">페이스북</a>
+			<br/>
+			<h2>기본 이벤트를 지우고 새로운 이벤트를 실행시킵니다. </h2>
+			<h2>2가지 방법(수식어, 직접호출) 둘다 알아야 합니다.</h2>
+		</div>
+		<script type="text/javascript">
+			var vm = new Vue({
+				el:"#example",
+				methods:{
+					ctxStop:function(e){
+						//e.preventDefault();
+					},
+					confirmFB:function(e){
+						if(!confirm("페이스북으로 이동할까요?")){
+							e.preventDefault();
+						}
+					}
+				}
+			});
+		</script>
+		</div>
+	</body>
+</html>

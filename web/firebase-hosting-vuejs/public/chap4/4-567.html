@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>4-567</title>
+		<script src="https://unpkg.com/vue/dist/vue.min.js"></script>
+		<style>
+			#outer{
+				width:200px; height:200px; border:solid 2px black;
+					background-color : aqua;
+					position : absolute; top:100px; left:50px;
+					padding : 10px;
+			}
+			#inner{
+				width:100px; height:100px; border : solid 2px black;
+					background-color : yellow;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="example">
+			<div id="outer" @click.stop="outerClick">
+			<!-- 캡쳐단에서 기본 이벤트 실행을 막으면서 버블링을 막아버려서 결국 아무 의미 없어지는 코드 -->
+			<!-- capture 단계에서 전파를 중단(stop)하기 때문 -->
+			<!--<div id="outer" @click.capture.stop="outerClick">-->
+				<div id="inner" @click.stop="innerClick"></div>
+			</div>		
+		</div>
+		<script type="text/javascript">
+			var vm = new Vue({
+				el:"#example",
+				methods:{
+					outerClick : function(e){
+						console.log("### Outer Click");
+						console.log("Event Phase : ",e.eventPhase);
+						console.log("Current Target : ", e.currentTarget);
+						console.log("Target : ", e.target);
+						//e.stopPropagation();
+					},
+					innerClick : function(e){
+						console.log("### Inner Click");
+						console.log("Event Phase : ", e.eventPhase);
+						console.log("Current Target : ", e.currentTarget);
+						console.log("Target : ", e.target);
+						//e.stopPropagation();
+					}			
+				}
+			});
+		</script>
+		</div>
+	</body>
+</html>
+
