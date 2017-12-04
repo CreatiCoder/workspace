@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>4-1</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<script src="https://unpkg.com/vue/dist/vue.min.js"></script>
+		<style media="screen">
+			.layout1 { margin : 30px };
+		</style>
+	</head>
+	<body>
+		<div id="example" class="container layout1">
+			<p><input type="text" v-model="amount" class="form-control" /></p>
+			<p>
+				<button id="deposit" v-on:click="balance += parseInt(amount)" class="btn btn-primary">예금</button>
+				<button id="withdraw" @click="balance -= parseInt(amount)" class="btn btn-primary">인출</button>
+			</p>
+			<h3> 계좌 잔고 : {{balance}} </h3>
+			<h2>인라인 코드안에 예외처리 까지 넣기에는 가독성도 안좋을 뿐더러 좋지 않은 표현</h2>
+		</div>
+		<script type="text/javascript">
+			var vm = new Vue({
+				el:"#example",
+				data:{
+					amount : 0,
+					balance : 0
+				}	
+			});
+		</script>
+		</div>
+	</body>
+</html>

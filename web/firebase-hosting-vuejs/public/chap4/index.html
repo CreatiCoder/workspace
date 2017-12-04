@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>4장</title>
+		<script src="https://unpkg.com/vue/dist/vue.min.js"></script>
+		<style media="screen">
+			h4 { text-align : center };
+		</style>
+	</head>
+	<body>
+
+		<div id="example">
+			<h1>4장 예제</h1>
+			<h4 v-for="(sentence, index) in sentences" >
+				<span v-html="index+1"></span>.
+				<span v-html="sentence"></span>
+			</h4>
+
+
+			<script type="text/javascript">
+				var model = {
+					sentences : [
+						'<a href="./4-1.html">4-1예제</a>',
+						'<a href="./4-23.html">4-23예제</a>',
+						'<a href="./4-4.html">4-4예제</a>',
+						'<a href="./4-567.html">4-567예제</a>',
+						'<a href="./4-8.html">4-8예제</a>',
+						'<a href="./4-910.html">4-910예제</a>',
+						'<a href="./4-11.html">4-11예제</a>',
+					]
+				};
+				var clist = new Vue({
+					el:"#example",
+					data:model
+				});
+			</script>
+		</div>
+	</body>
+</html>
