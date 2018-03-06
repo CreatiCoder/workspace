@@ -1,6 +1,7 @@
 package main;
 
-import java.awt.Color;
+import java.awt.FlowLayout;
+import java.awt.Image;
 import java.awt.datatransfer.DataFlavor;
 import java.awt.datatransfer.Transferable;
 import java.awt.datatransfer.UnsupportedFlavorException;
@@ -13,7 +14,6 @@ import java.awt.dnd.DropTargetListener;
 import java.io.File;
 import java.io.IOException;
 import java.util.List;
-import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -21,17 +21,17 @@ import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
 
 public class ImagePane extends JPanel implements DropTargetListener {
-	/**
-	 
-	 */
 	private static final long serialVersionUID = 7226120178750477830L;
-	private Icon ic;
 
 	ImagePane() {
-		DropTarget dt = new DropTarget(this, DnDConstants.ACTION_COPY_OR_MOVE, this, true);
-		this.setBackground(Color.BLACK);
-		ic = new ImageIcon("default.gif");
+		new DropTarget(this, DnDConstants.ACTION_COPY_OR_MOVE, this, true);
+		ImageIcon ic = new ImageIcon (ImagePane.class.getResource("./../upload.png").getPath());
+		
+		Image ig = ic.getImage().getScaledInstance(500, 300, java.awt.Image.SCALE_SMOOTH);
+		ic = new ImageIcon(ig);
 		JLabel label = new JLabel(ic);
+		((FlowLayout) this.getLayout()).setVgap(0);
+		((FlowLayout) this.getLayout()).setHgap(0);
 		this.add(label);
 	}
 
@@ -49,25 +49,22 @@ public class ImagePane extends JPanel implements DropTargetListener {
 
 	@Override
 	public void dragExit(DropTargetEvent dte) {
-		repaint();
 	}
 
 	@Override
 	public void drop(DropTargetDropEvent dtde) {
 		dtde.acceptDrop(DnDConstants.ACTION_COPY_OR_MOVE);
 		Transferable t = dtde.getTransferable();
-		List fileList;
 		try {
-			fileList = (List) t.getTransferData(DataFlavor.javaFileListFlavor);
-			File f = (File) (fileList.get(0));
+			@SuppressWarnings("unchecked")
+			File f = (File) (((List<Object>) t.getTransferData(DataFlavor.javaFileListFlavor)).get(0));
 			String path = f.getAbsolutePath();
 			if (path.split("\\.")[1].equals("gif")) {
-				ic = new ImageIcon(path);
-				JLabel label = new JLabel(ic);
 				this.removeAll();
+				ImageIcon ic = new ImageIcon(path);
+				JLabel label = new JLabel(ic);
 				this.add(label);
-				JFrame root = (JFrame) SwingUtilities.getRoot(this);
-				root.pack();
+				((JFrame) SwingUtilities.getRoot(this)).pack();
 				this.repaint();
 			}
 		} catch (UnsupportedFlavorException e) {
