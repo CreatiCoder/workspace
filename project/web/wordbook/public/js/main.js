@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
 		dao.ifNotExistDoThis("word", dao.selectAll, "word");
 		dao.ifNotExistDoThis("state", dao.selectAll, "state");
 		dao.initState();
+
 	} catch (e) {
 		console.log(e);
 	}
