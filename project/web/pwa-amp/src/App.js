@@ -13,12 +13,6 @@ class App extends Component {
 				<p className="App-intro">
 					To get started, edit <code>src/App.js</code> and save to reload.
 				</p>
-				<amp-img
-					src="https://www.ampproject.org/examples/images/amp.jpg"
-					width="900"
-					height="508"
-					layout="responsive"
-				/>
 			</div>
 		);
 	}
