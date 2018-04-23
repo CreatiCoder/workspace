@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Welcome to Firebase Hosting</title>
+    <!-- update the version number as needed
+    -->
+    <script defer src="/__/firebase/4.10.1/firebase-app.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/4.10.1/firebase-auth.js"></script>
+    <script defer src="/__/firebase/4.10.1/firebase-database.js"></script>
+    <script defer src="/__/firebase/4.10.1/firebase-messaging.js"></script>
+    <script defer src="/__/firebase/4.10.1/firebase-storage.js"></script>
+    <script defer src="/__/firebase/4.10.1/firebase-firestore.js"></script>
+    <!-- initialize the SDK after all desired features are loaded
+    -->
+    <script defer src="/__/firebase/init.js"></script>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/main.css">
+
+
+    <link rel="manifest" href="/manifest.json">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+  </head>
+
+  <body>
+    <div class="content">
+      <div class="side side-left" onclick="dao.downPage()"></div>
+      <div class="grid-container list-grid-container ">
+        <ul class="list-group word-list text-center">
+          <li class="list-group-item">Cras justo odio</li>
+          <li class="list-group-item">Dapibus ac facilisis in</li>
+          <li class="list-group-item">Morbi leo risus</li>
+          <li class="list-group-item">Porta ac consectetur ac</li>
+          <li class="list-group-item">Vestibulum at eros</li>
+          <li class="list-group-item">Cras justo odio</li>
+          <li class="list-group-item">Dapibus ac facilisis in</li>
+          <li class="list-group-item">Morbi leo risus</li>
+          <li class="list-group-item">Porta ac consectetur ac</li>
+          <li class="list-group-item">Vestibulum at eros</li>
+        </ul>
+      </div>
+      <div class="side side-right" onclick="dao.upPage()"></div>
+    </div>
+    <div class="switch-word" ontouchstart="dao.mouseDown()" ontouchcancel="dao.mouseUp()"
+    onmouseleave="dao.mouseUp()" onmousedown="dao.mouseDown()" onmouseup="dao.mouseUp()"></div>
+    <ul class="navbar">
+      <li class="btn font-weight-bold" onClick="dao.downDay()">◀</li>
+      <li class="btn font-weight-bold">1일</li>
+      <li class="btn font-weight-bold" onClick="dao.upDay()">▶</li>
+    </ul>
+  </body>
+  <script defer src="/js/dao.js"></script>
+  <script defer src="/js/main.js"></script>
+  <script>
+    // 서비스 워커 등록
+      if ('serviceWorker' in navigator) {
+          navigator.serviceWorker.register('/service-worker.js').then(function(a, b, c) {
+              console.log('Service Worker Registered');
+          });
+      }
+  </script>
+
+</html>

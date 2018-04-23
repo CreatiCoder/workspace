@@ -1,0 +1,14 @@
+{
+  "short_name": "단어장",
+  "name": "단어장",
+  "display": "standalone",
+  "theme_color": "#fff",
+  "background_color": "#fff",
+  "description": "단어장 Icon",
+  "icons": [{
+    "src": "word_192.png",
+    "sizes": "192x192",
+    "type": "image/png"
+  }],
+  "start_url": "index.html?launcher=true"
+}

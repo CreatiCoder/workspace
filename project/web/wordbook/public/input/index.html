@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Welcome to Firebase Hosting</title>
+    <!-- update the version number as needed
+    -->
+    <script defer src="/__/firebase/4.10.1/firebase-app.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/4.10.1/firebase-auth.js"></script>
+    <script defer src="/__/firebase/4.10.1/firebase-database.js"></script>
+    <script defer src="/__/firebase/4.10.1/firebase-messaging.js"></script>
+    <script defer src="/__/firebase/4.10.1/firebase-storage.js"></script>
+    <script defer src="/__/firebase/4.10.1/firebase-firestore.js"></script>
+
+    <!-- initialize the SDK after all desired features are loaded
+    -->
+    <script defer src="/__/firebase/init.js"></script>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/main.css">
+  </head>
+
+  <body>
+    <div class="content">
+      <div class="side side-left" onclick="dao.downPage()"></div>
+      <div class="grid-container list-grid-container ">
+        <ul class="list-group word-list text-center">
+        	<textarea class="list-group-item"></textarea>
+        </ul>
+      </div>
+      <div class="side side-right" onclick="dao.upPage()"></div>
+    </div>
+      <div class="switch-word" onmouseleave="dao.mouseUp()" onmousedown="dao.mouseDown()" onmouseup="dao.mouseUp()"></div>
+    <ul class="navbar">
+      <li class="btn font-weight-bold" onClick="dao.downDay()">◀</li>
+      <li class="btn font-weight-bold"> 1일</li>
+      <li class="btn font-weight-bold" onClick="dao.upDay()">▶</li>
+    </ul>
+  </body>
+  <script defer src="/js/dao.js"></script>
+</html>
+<!--
+var str = document.getElementsByClassName("list-group-item")[0].value
+var arr = str.split("\n")
+arr = arr.map((ele)=>{return {
+day:ele.split("\t")[0],
+name:ele.split("\t")[1],
+value:ele.split("\t")[2]
+}});
+for(var i =0;i<arr.length;i++){
+var pre = (i<10)?'00':(i<100)?'0':'';
+dao.fsdb.collection("word").doc('word'+pre+i).set(arr[i]);
+//console.log('word'+pre+i);
+}
+-->
