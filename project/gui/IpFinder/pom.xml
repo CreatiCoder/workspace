@@ -3,11 +3,11 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.test</groupId>
-  <artifactId>ipFInder</artifactId>
+  <artifactId>IpFinder</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>jar</packaging>
 
-  <name>ipFInder</name>
+  <name>IpFinder</name>
   <url>http://maven.apache.org</url>
 
   <properties>

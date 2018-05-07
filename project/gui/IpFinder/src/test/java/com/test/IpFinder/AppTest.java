@@ -1,4 +1,4 @@
-package com.test.ipFInder;
+package com.test.IpFinder;
 
 import junit.framework.Test;
 import junit.framework.TestCase;

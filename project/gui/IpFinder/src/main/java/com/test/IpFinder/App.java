@@ -1,4 +1,4 @@
-package com.test.ipFInder;
+package com.test.IpFinder;
 
 import java.awt.*;
 
