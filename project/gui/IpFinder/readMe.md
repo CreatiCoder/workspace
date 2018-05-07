@@ -10,15 +10,13 @@
 
 #### 1. App.java
 
-[사진]
+![App.java](./App.PNG?raw=true "Title")
 
 #### 2. EventClass.java
 
-[사진]
+![EventClass.java](EventClass.PNG?raw=true "Title")
 
-### 
+## ◆ 결과 화면
 
-### ◆ 결과 화면
-
-[사진]
+![result image](result.PNG?raw=true "Title")
 
