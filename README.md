@@ -33,3 +33,7 @@
 #### 7) [풀이] 백준 문제 풀이
           백준 알고리즘 문제 해결 풀이 코드 (JAVA)
           https://github.com/CreatiCoding/CrecoLab/tree/master/assignment/algorithms/source/backjoon
+
+#### 8) [프로젝트] gui-ToDoList
+          swing을 활용한 할 일 목록
+          https://github.com/CreatiCoding/CrecoLab/tree/master/project/gui/ToDoList
