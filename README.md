@@ -37,6 +37,5 @@
 #### 8) [프로젝트] gui-ToDoList
 
           swing을 활용한 할 일 목록
-          
           https://github.com/CreatiCoding/CrecoLab/tree/master/project/gui/ToDoList
 
