@@ -1,4 +1,4 @@
-#ToDoList
+# ToDoList
 
 ### 1. 개요
 
@@ -14,11 +14,11 @@
 
 #### 2) DeleteBtnEvent.java
 
-[![DeleteBtnEvent.java](./DeleteBtnEvent.PNG?raw=true "이벤트 삭제")](https://github.com/CreatiCoding/CrecoLab/blob/master/project/gui/IpFinder/src/main/java/com/test/IpFinder/EventClass.java)
+[![DeleteBtnEvent.java](./DeleteBtnEvent.PNG?raw=true "이벤트 삭제")](https://github.com/CreatiCoding/CrecoLab/blob/master/project/gui/ToDoList/src/main/java/com/test/ToDoList/DeleteBtnEvent.java)
 
 #### 3) WriteBtnEvent.java
 
-[![WriteBtnEvent.java](./WriteBtnEvent.java?raw=true "추가이벤트..")}(https://github.com/CreatiCoding/CrecoLab/blob/master/project/gui/ToDoList/src/main/java/com/test/ToDoList/App.java);
+[![WriteBtnEvent.java](./WriteBtnEvent.PNG?raw=true "이벤트 삭제")](https://github.com/CreatiCoding/CrecoLab/blob/master/project/gui/ToDoList/src/main/java/com/test/ToDoList/WriteBtnEvent.java);
 
 ### 4. 결과 화면
 
