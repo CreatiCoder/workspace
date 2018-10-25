@@ -44,9 +44,12 @@ https://github.com/JaeYeopHan/Interview_Question_for_Beginner/tree/master/Java
 
 https://github.com/JaeYeopHan/Interview_Question_for_Beginner/tree/master/JavaScript
 
+https://github.com/yangshun/front-end-interview-handbook/blob/master/Translations/Korean/questions/javascript-questions.md
+
 12. FE
 
 https://github.com/JaeYeopHan/Interview_Question_for_Beginner/tree/master/FrontEnd
+
 https://github.com/h5bp/Front-end-Developer-Interview-Questions/tree/master/Translations/Korean
 
 13. 미세먼지 면접 팁
